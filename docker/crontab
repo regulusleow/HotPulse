@@ -1,0 +1,6 @@
+# 每天 3 次定时运行 (北京时间)
+0 9 * * * cd /app && /usr/local/bin/python main.py >> /var/log/cron.log 2>&1   # 早上 9:00
+30 12 * * * cd /app && /usr/local/bin/python main.py >> /var/log/cron.log 2>&1 # 中午 12:30
+0 20 * * * cd /app && /usr/local/bin/python main.py >> /var/log/cron.log 2>&1  # 晚上 20:00
+
+# 空行必须存在

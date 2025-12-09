@@ -1,0 +1,57 @@
+# 爬虫配置
+crawler:
+  request_interval: 1000  # 请求间隔(毫秒)
+  api_base_url: "https://newsnow.busiyi.world/api/s"
+
+# 平台配置（针对军事政治、国际政治、科技AI、iOS技术等领域优化）
+platforms:
+  # === 综合热点平台 ===
+  - id: "weibo"
+    name: "微博热搜"
+  - id: "zhihu"
+    name: "知乎热榜"
+  - id: "baidu"
+    name: "百度热搜"
+  
+  # === 科技与技术平台 ===
+  - id: "36kr"
+    name: "36氪"
+  - id: "juejin"
+    name: "掘金"
+  - id: "sspai"
+    name: "少数派"
+  - id: "v2ex"
+    name: "V2EX"
+  - id: "ithome"
+    name: "IT之家"
+  - id: "github-trending"
+    name: "GitHub Trending"
+  
+  # === 新闻与时政平台 ===
+  - id: "thepaper"
+    name: "澎湃新闻"
+  - id: "guancha"
+    name: "观察者网"
+  - id: "ifeng"
+    name: "凤凰网"
+  - id: "wallstreetcn"
+    name: "华尔街见闻"
+  
+  # === 视频与娱乐平台 ===
+  - id: "bilibili-hot-search"
+    name: "B站热搜"
+  - id: "douyin"
+    name: "抖音热点"
+
+# 关键词过滤（针对你的关注领域优化）
+# 留空则推送全部热点
+# 语法: +必须包含  !排除  @数量限制  普通词=包含即可
+# 当前配置: 匹配 AI/iOS/台湾等关键词，排除广告营销，限制30条
+keywords: "AI Swift iOS 台湾 台海 Claude OpenAI deepseek SwiftUI 军事 政治 美国 日本 中国 KMP 跨平台 编程 !广告 !营销 !推广 !娱乐 @30"
+
+# Telegram 配置
+# GitHub Actions: 通过 Secrets 注入环境变量
+# Docker: 通过环境变量或 .env 文件配置
+telegram:
+  bot_token: ""   # 环境变量: TELEGRAM_BOT_TOKEN
+  chat_id: ""     # 环境变量: TELEGRAM_CHAT_ID
