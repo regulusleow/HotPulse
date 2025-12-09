@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  hotpulse:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: hotpulse
+    environment:
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID}
+    volumes:
+      - ../config:/app/config:ro
+    restart: unless-stopped
